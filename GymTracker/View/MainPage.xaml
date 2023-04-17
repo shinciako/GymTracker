@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:model="clr-namespace:GymTracker.Model"
+             xmlns:viewmodel="clr-namespace:GymTracker.ViewModel"
+             x:Class="GymTracker.MainPage"
+             x:DataType="viewmodel:MainPageViewModel"
+             Title="Workout">
+
+    <VerticalStackLayout
+        Spacing="25"
+            Margin="0,40,0,50"
+            Padding="20,0">
+        <Button Text="Register workout"
+                    FontSize="20"
+                    Command="{Binding GoToRegisterWorkoutCommand}"/>
+
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <Label Text="Your Templates" HorizontalOptions="Start"
+                       FontSize="30"/>
+            <Button Text="+" Grid.Column="1" HorizontalOptions="End"
+                        HeightRequest="10"
+                        FontSize="40"
+                        Padding="1"/>
+        </Grid>
+
+        <CollectionView HeightRequest="370" ItemsSource="{Binding Templates}">
+            <CollectionView.ItemsLayout>
+                <GridItemsLayout Orientation="Vertical"
+                         Span="2"
+                         VerticalItemSpacing="10"
+                         HorizontalItemSpacing="10"/>
+            </CollectionView.ItemsLayout>
+            <CollectionView.ItemTemplate>
+                <DataTemplate x:DataType="model:Template">
+                    <Frame Margin="10"
+                   Padding="10"
+                   CornerRadius="5"
+                   HeightRequest="100"
+                   WidthRequest="150">
+                        <StackLayout>
+                            <Label Text="{Binding Name}"
+                           FontAttributes="Bold"
+                           FontSize="Medium" />
+                            <Label Text="{Binding Description}"
+                           FontSize="Small" />
+                        </StackLayout>
+                    </Frame>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+
+        <Button Text="Show Exercises"/>
+        <Button Text="Show History"/>
+    </VerticalStackLayout>
+</ContentPage>
+
