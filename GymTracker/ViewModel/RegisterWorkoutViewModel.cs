@@ -26,11 +26,14 @@ public class RegisterWorkoutViewModel : BaseViewModel
     {
         Training training = new Training
         {
-            Sets = 0,
-            Repetitions = new List<int> { 0 },
-            Kilograms = new List<float> { 0 },
+            Sets = new()
+            {
+                new Set(0,0)
+            },
             Exercise = exercise
         };
         Trainings.Add(training);
     }
+
+
 }

@@ -8,8 +8,8 @@
                x:DataType="viewmodel:ModalBoxExercisesViewModel">
 
     <VerticalStackLayout>
-        <ContentView BackgroundColor="DarkGoldenrod">
-            <Label Text="Selected Item" FontSize="24" HorizontalOptions="Center"
+        <ContentView x:Name="topMessage" BackgroundColor="DarkGoldenrod">
+            <Label x:Name="topMessageLabel" Text="Selected Item" FontSize="24" HorizontalOptions="Center"
                TextColor="White" />
         </ContentView>
 

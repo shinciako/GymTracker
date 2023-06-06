@@ -32,7 +32,6 @@
                         <Grid.RowDefinitions>
                             <RowDefinition Height="*" />
                         </Grid.RowDefinitions>
-
                         <StackLayout Grid.Row="0"
                                      VerticalOptions="CenterAndExpand"
                                      HorizontalOptions="FillAndExpand"
@@ -44,6 +43,20 @@
                                    TextColor="WhiteSmoke" />
                         </StackLayout>
                     </Grid>
+                            <StackLayout BindableLayout.ItemsSource="{Binding Sets}">
+                        <BindableLayout.ItemTemplate>
+                            <DataTemplate x:DataType="model:Set">
+                                <StackLayout Orientation="Horizontal">
+                                    <Label Text="{Binding Weight}"
+                                           FontSize="Medium"
+                                           HorizontalOptions="CenterAndExpand" />
+                                    <Label Text="{Binding Repetition}"
+                                           FontSize="Medium"
+                                           HorizontalOptions="CenterAndExpand" />
+                                </StackLayout>
+                            </DataTemplate>
+                        </BindableLayout.ItemTemplate>
+                    </StackLayout>
                 </StackLayout>
             </Frame>
         </DataTemplate>

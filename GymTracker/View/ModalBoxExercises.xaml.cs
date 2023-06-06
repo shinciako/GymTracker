@@ -28,13 +28,20 @@ public partial class ModalBoxExercises : Popup
     }
 
 
-    private void AddExercise(object sender, EventArgs e)
+    private async void AddExercise(object sender, EventArgs e)
     {
         if (selectedItem != null)
         {
             registerWorkoutViewModel.AddExercise(selectedItem);
+            Close();
         }
-        Close();
+        else
+        {
+            topMessage.BackgroundColor = Color.FromRgb(255, 0, 0);
+            topMessageLabel.Text = "SELECT ITEM";
+            await Task.Delay(2000);
+            topMessageLabel.Text = "Selected Item";
+            topMessage.BackgroundColor = Color.FromRgb(184, 134, 11);
+        }
     }
-
 }

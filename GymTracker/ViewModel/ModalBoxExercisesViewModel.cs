@@ -38,16 +38,7 @@ public class ModalBoxExercisesViewModel : BaseViewModel
             new Exercise("Plank", "Abdominal"),
             new Exercise("Squat front", "Lower body"),
             new Exercise("Squat back", "Lower body"),
-        };
-
-       
-    }
-
-    private Command addExerciseCommand;
-    public ICommand AddExerciseCommand => addExerciseCommand ??= new Command(AddExercise);
-
-    private void AddExercise()
-    {
+        };  
     }
 }
 
