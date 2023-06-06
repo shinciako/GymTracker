@@ -19,6 +19,7 @@ public static class MauiProgram
         builder.Services.AddSingleton<MainPageViewModel>();
         builder.Services.AddSingleton<RegisterWorkoutPage>();
         builder.Services.AddSingleton<RegisterWorkoutViewModel>();
+        builder.Services.AddSingleton<ModalBoxExercisesViewModel>();
         return builder.Build();
     }
 }

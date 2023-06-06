@@ -4,9 +4,17 @@ namespace GymTracker.View;
 
 public partial class RegisterWorkoutPage : ContentPage
 {
-	public RegisterWorkoutPage(RegisterWorkoutViewModel viewModel)
+    private RegisterWorkoutViewModel viewModel;
+
+    public RegisterWorkoutPage(RegisterWorkoutViewModel viewModel)
 	{
-		InitializeComponent();
-		BindingContext = viewModel;
-	}
+        InitializeComponent();
+        viewModel = new RegisterWorkoutViewModel();
+        BindingContext = viewModel;
+    }
+
+    public void AddSelectedExercise(Exercise exercise)
+    {
+        viewModel.AddExercise(exercise);
+    }
 }

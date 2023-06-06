@@ -8,6 +8,10 @@ public partial class MainPageViewModel: BaseViewModel
         new Template("Legs", "Bench press, Incline Bench"),
         new Template("Legs", "Squat, Extension"),
         new Template("Legs", "Bench press, Incline Bench"),
+        new Template("Legs", "Squat, Extension"),
+        new Template("Legs", "Bench press, Incline Bench"),
+        new Template("Legs", "Squat, Extension"),
+        new Template("Legs", "Bench press, Incline Bench"),
     };
 
 
