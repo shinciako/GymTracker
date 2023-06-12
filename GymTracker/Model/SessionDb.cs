@@ -22,8 +22,12 @@ namespace GymTracker.Model
             //var exercises = new ObservableCollection<Exercise>()
             //    {
             //        new Exercise { Name = "Bench press", MusclePart = "Chest" },
+            //        new Exercise { Name = "Dip", MusclePart = "Chest" },
+            //        new Exercise { Name = "Plate press", MusclePart = "Chest" },
             //        new Exercise { Name = "Squat front", MusclePart = "Lower body" },
             //        new Exercise { Name = "Squat back", MusclePart = "Lower body" },
+            //        new Exercise { Name = "Leg curl", MusclePart = "Lower body" },
+            //        new Exercise { Name = "Deadlift", MusclePart = "Lower body" },
             //    };
             //AddExercises(exercises);
         }

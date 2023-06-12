@@ -13,6 +13,11 @@ public partial class MainPage : ContentPage
         Application.Current.MainPage.Navigation.PushAsync(new HistoryPage());
     }
 
+    void Exercise_Clicked(System.Object sender, System.EventArgs e)
+    {
+        Application.Current.MainPage.Navigation.PushAsync(new ExercisesPage());
+    }
+
 }
 
 
