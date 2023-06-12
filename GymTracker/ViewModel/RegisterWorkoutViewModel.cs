@@ -45,34 +45,15 @@ public class RegisterWorkoutViewModel : BaseViewModel
         SessionDb sessionDb = new SessionDb();
         Session newSession = new Session { Timestamp = DateTime.Now, Trainings = _trainings};
 
-        if (newSession.Trainings.Count < 0)
+        if (newSession.Trainings.Count > 0)
         {
-            await Application.Current.MainPage.DisplayAlert("Error", "You need to add Exercise", "OK");
+            sessionDb.AddSession(newSession);
+            ClearTraining(); 
         }
         else
         {
-            sessionDb.AddSession(newSession);
-            ClearTraining();
+            await Application.Current.MainPage.DisplayAlert("Error", "You need to add an Exercise", "OK");
         }
-
-        //var sessions = sessionDb.GetSessions();
-
-        //foreach (var session in sessions)
-        //{
-        //    Console.WriteLine($"Session ID: {session.Id}");
-        //    if (session.Trainings != null && session.Trainings.Count > 0)
-        //    {
-        //        foreach (var training in session.Trainings)
-        //        {
-        //            Console.WriteLine($"Weight: {training.Weight}");
-        //            Console.WriteLine($"Repetition: {training.Repetition}");
-        //        }
-        //    }
-        //    else
-        //    {
-        //        Console.WriteLine("No trainings found for this session.");
-        //    }
-        //}
     }
 
     public ICommand CancelCommand => new Command(ClearTraining);
