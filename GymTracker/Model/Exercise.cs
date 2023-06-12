@@ -1,14 +1,17 @@
-﻿namespace GymTracker.Model;
+﻿using SQLite;
+using SQLiteNetExtensions.Attributes;
 
+namespace GymTracker.Model;
+
+[Table("Exercise")]
 public class Exercise
 {
+    [PrimaryKey, AutoIncrement]
+    public int Id { get; set; }
+
     public string Name { get; set; }
     public string MusclePart { get; set; }
 
-    public Exercise(string name, string musclePart)
-    {
-        Name = name;
-        MusclePart = musclePart;
-    }
+    [ManyToOne]
+    public Training Training { get; set; }
 }
-

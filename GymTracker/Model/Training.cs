@@ -1,8 +1,24 @@
-﻿namespace GymTracker.Model;
+﻿using SQLite;
+using SQLiteNetExtensions.Attributes;
 
+namespace GymTracker.Model;
+
+[Table("Training")]
 public class Training
 {
+    [PrimaryKey, AutoIncrement]
+    public int Id { get; set; }
+
+    [ForeignKey(typeof(Session))]
+    public int SessionId { get; set; }
+
+    [ManyToOne]
+    public Session Session { get; set; }
+
+    [ManyToOne]
     public Exercise Exercise { get; set; }
-    public List<Set> Sets { get; set; }
+
+    public int Repetition { get; set; }
+    public int Weight { get; set; }
 }
 

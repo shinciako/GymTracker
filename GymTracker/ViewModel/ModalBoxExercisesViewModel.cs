@@ -30,15 +30,8 @@ public class ModalBoxExercisesViewModel : BaseViewModel
 
     public ModalBoxExercisesViewModel()
     {
-        Exercises = new ObservableCollection<Exercise>()
-        {
-            new Exercise("Bench press", "Chest"),
-            new Exercise("Squat front", "Lower body"),
-            new Exercise("Squat back", "Lower body"),
-            new Exercise("Plank", "Abdominal"),
-            new Exercise("Squat front", "Lower body"),
-            new Exercise("Squat back", "Lower body"),
-        };  
+        SessionDb sessionDb = new();
+        Exercises = new ObservableCollection<Exercise>(sessionDb.GetExercises());
     }
 }
 
