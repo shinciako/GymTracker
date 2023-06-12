@@ -54,8 +54,8 @@
             </CollectionView.ItemTemplate>
         </CollectionView>
 
-        <Button Text="Show Exercises"/>
-        <Button Text="Show History"/>
+        <Button Text="Show Exercises" />
+        <Button Text="Show History" Clicked="History_Clicked"/>
     </VerticalStackLayout>
 </ContentPage>
 

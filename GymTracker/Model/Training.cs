@@ -15,6 +15,9 @@ public class Training
     [ManyToOne]
     public Session Session { get; set; }
 
+    [ForeignKey(typeof(Exercise))]
+    public int ExerciseId { get; set; }
+
     [ManyToOne]
     public Exercise Exercise { get; set; }
 

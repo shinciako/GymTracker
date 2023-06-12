@@ -32,6 +32,7 @@ public class RegisterWorkoutViewModel : BaseViewModel
         {
             Weight = 0,
             Repetition = 0,
+            ExerciseId = exercise.Id,
             Exercise = exercise
         };
         Trainings.Add(training);
@@ -44,7 +45,6 @@ public class RegisterWorkoutViewModel : BaseViewModel
     {
         SessionDb sessionDb = new SessionDb();
         Session newSession = new Session { Timestamp = DateTime.Now, Trainings = _trainings};
-
         if (newSession.Trainings.Count > 0)
         {
             sessionDb.AddSession(newSession);

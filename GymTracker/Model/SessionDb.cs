@@ -12,26 +12,25 @@ namespace GymTracker.Model
         public SessionDb()
         {
             string dbPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "mydatabase.db");
-            File.Delete(dbPath);
+            //File.Delete(dbPath);
             _connection = new SQLiteConnection(dbPath);
             _connection.CreateTable<Session>();
             _connection.CreateTable<Training>();
             _connection.CreateTable<Exercise>();
 
-            _connection.DeleteAll<Exercise>();
-            var exercises = new ObservableCollection<Exercise>()
-                {
-                    new Exercise { Name = "Bench press", MusclePart = "Chest" },
-                    new Exercise { Name = "Squat front", MusclePart = "Lower body" },
-                    new Exercise { Name = "Squat back", MusclePart = "Lower body" },
-                    new Exercise { Name = "Bench press", MusclePart = "Chest" },
-                };
-            AddExercises(exercises);
+            //_connection.DeleteAll<Exercise>();
+            //var exercises = new ObservableCollection<Exercise>()
+            //    {
+            //        new Exercise { Name = "Bench press", MusclePart = "Chest" },
+            //        new Exercise { Name = "Squat front", MusclePart = "Lower body" },
+            //        new Exercise { Name = "Squat back", MusclePart = "Lower body" },
+            //    };
+            //AddExercises(exercises);
         }
 
         public List<Session> GetSessions()
         {
-            return _connection.GetAllWithChildren<Session>().ToList();
+            return _connection.GetAllWithChildren<Session>(recursive: true).ToList();
         }
 
         public void AddSession(Session session)
