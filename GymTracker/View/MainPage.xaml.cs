@@ -18,6 +18,15 @@ public partial class MainPage : ContentPage
         Application.Current.MainPage.Navigation.PushAsync(new ExercisesPage());
     }
 
+    private async void Frame_Tapped(object sender, EventArgs e)
+    {
+        var frame = (Frame)sender;
+        var template = (Template)frame.BindingContext;
+
+        var registerWorkoutPage = new RegisterWorkoutPage(new RegisterWorkoutViewModel(template.Exercises));
+
+        await Shell.Current.Navigation.PushAsync(registerWorkoutPage);
+    }
 }
 
 

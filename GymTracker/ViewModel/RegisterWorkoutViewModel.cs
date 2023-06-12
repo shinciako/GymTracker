@@ -9,11 +9,18 @@ public class RegisterWorkoutViewModel : BaseViewModel
     private List<Training> _trainings { get; set; }
     private RegisterWorkoutViewModel _viewModel;
 
-    public RegisterWorkoutViewModel()
+    public RegisterWorkoutViewModel(List<Exercise> exercices)
     {
         _viewModel = this;
         Trainings = new();
         _trainings = new();
+        if (exercices != null)
+        {
+            foreach (var exercise in exercices)
+            {
+                AddExercise(exercise);
+            }
+        }
     }
 
     public ICommand DisplayPopupCommand => new Command(DisplayPopup);

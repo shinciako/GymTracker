@@ -2,27 +2,26 @@
 
 public partial class MainPageViewModel: BaseViewModel
 {
-    public ObservableCollection<Template> Templates { get; } = new ObservableCollection<Template>()
-    {
-        new Template("Legs", "Squat, Extension"),
-        new Template("Legs", "Bench press, Incline Bench"),
-        new Template("Legs", "Squat, Extension"),
-        new Template("Legs", "Bench press, Incline Bench"),
-        new Template("Legs", "Squat, Extension"),
-        new Template("Legs", "Bench press, Incline Bench"),
-        new Template("Legs", "Squat, Extension"),
-        new Template("Legs", "Bench press, Incline Bench"),
-    };
-
+	public ObservableCollection<Template> Templates { get; }
+    private SessionDb sessionDb; 
 
     public MainPageViewModel()
-	{
-	}
+    {
+        sessionDb = new();
+        var exercises = sessionDb.GetExercises();
 
-	[RelayCommand]
+        Templates = new()
+        {
+            new Template { Name = "Chest Workout", Exercises = exercises.Where(e => e.MusclePart == "Chest").ToList() },
+            new Template { Name = "Leg Workout", Exercises = exercises.Where(e => e.MusclePart == "Lower body").ToList() }
+        };
+    }
+
+    [RelayCommand]
 	async Task GoToRegisterWorkout()
 	{
-		await Shell.Current.GoToAsync(nameof(RegisterWorkoutPage));
+        var registerWorkoutPage = new RegisterWorkoutPage(new RegisterWorkoutViewModel(null));
+        await Shell.Current.Navigation.PushAsync(registerWorkoutPage);
 	}
 }
 

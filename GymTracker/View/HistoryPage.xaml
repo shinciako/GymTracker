@@ -9,7 +9,7 @@
     <ContentPage.Content>
 
         <StackLayout>
-            <CollectionView HeightRequest="600" ItemsSource="{Binding sessions}">
+            <CollectionView HeightRequest="700" ItemsSource="{Binding sessions}">
             <CollectionView.ItemsLayout>
                 <GridItemsLayout Orientation="Vertical"
                                  VerticalItemSpacing="10"

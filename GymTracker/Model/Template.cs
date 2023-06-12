@@ -1,14 +1,11 @@
 ﻿namespace GymTracker.Model;
+using SQLite;
+using SQLiteNetExtensions.Attributes;
+
 
 public class Template
 {
+    public int Id { get; set; }
     public string Name { get; set; }
-    public string Description { get; set; }
-
-    public Template(string name, string description)
-    {
-        Name = name;
-        Description = description;
-    }
+    public List<Exercise> Exercises { get; set; }
 }
-

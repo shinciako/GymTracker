@@ -11,6 +11,9 @@ public class Exercise
     public string Name { get; set; }
     public string MusclePart { get; set; }
 
+    [ForeignKey(typeof(Template))]
+    public int TemplateId { get; set; }
+
     [OneToMany(CascadeOperations = CascadeOperation.All)]
     public List<Training> Trainings { get; set; }
 }
