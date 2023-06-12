@@ -2,11 +2,11 @@
 
 public partial class MainPage : ContentPage
 {
-	public MainPage(MainPageViewModel viewModel)
-	{
-		InitializeComponent();
-		BindingContext = viewModel;
-	}
+    public MainPage(MainPageViewModel viewModel)
+    {
+        InitializeComponent();
+        BindingContext = viewModel;
+    }
 
     void History_Clicked(System.Object sender, System.EventArgs e)
     {
@@ -22,9 +22,7 @@ public partial class MainPage : ContentPage
     {
         var frame = (Frame)sender;
         var template = (Template)frame.BindingContext;
-
         var registerWorkoutPage = new RegisterWorkoutPage(new RegisterWorkoutViewModel(template.Exercises));
-
         await Shell.Current.Navigation.PushAsync(registerWorkoutPage);
     }
 }

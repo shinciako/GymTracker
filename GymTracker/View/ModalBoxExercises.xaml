@@ -18,37 +18,37 @@
                FontSize="24"
                />
 
-    <CollectionView HeightRequest="450" ItemsSource="{Binding Exercises}"
+        <CollectionView HeightRequest="450" ItemsSource="{Binding Exercises}"
                     SelectionMode="Single"
                     SelectionChanged="OnCollectionViewSelectionChanged"
                     SelectedItem="{Binding SelectedExercise, Mode=TwoWay}">
-           
-        <CollectionView.ItemsLayout>
-            <LinearItemsLayout Orientation="Vertical"
+
+            <CollectionView.ItemsLayout>
+                <LinearItemsLayout Orientation="Vertical"
                      ItemSpacing="10"/>
-        </CollectionView.ItemsLayout>
-        <CollectionView.ItemTemplate>
-            <DataTemplate x:DataType="model:Exercise">
-                <Frame Margin="10"
+            </CollectionView.ItemsLayout>
+            <CollectionView.ItemTemplate>
+                <DataTemplate x:DataType="model:Exercise">
+                    <Frame Margin="10"
                Padding="10"
                CornerRadius="5"
                HeightRequest="100"
                WidthRequest="200"
                BackgroundColor="AliceBlue">
-                    <StackLayout>
-                        <Label Text="{Binding Name}"
+                        <StackLayout>
+                            <Label Text="{Binding Name}"
                        FontAttributes="Bold"
                        FontSize="Medium" />
-                        <Label Text="{Binding MusclePart}"
+                            <Label Text="{Binding MusclePart}"
                        FontSize="Small" />
-                    </StackLayout>
-                </Frame>
-            </DataTemplate>
-        </CollectionView.ItemTemplate>
-        
-    </CollectionView>
-    <Button Text="Add selected exercise" Clicked="AddExercise" />
-</VerticalStackLayout>
+                        </StackLayout>
+                    </Frame>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
 
-    
+        </CollectionView>
+        <Button Text="Add selected exercise" Clicked="AddExercise" />
+    </VerticalStackLayout>
+
+
 </toolkit:Popup>

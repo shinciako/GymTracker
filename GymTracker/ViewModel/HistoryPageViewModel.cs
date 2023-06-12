@@ -25,7 +25,7 @@ public class HistoryPageViewModel
             {
                 foreach (var training in session.Trainings)
                 {
-                    training.Exercise = exercises[training.ExerciseId-1];
+                    training.Exercise = exercises[training.ExerciseId - 1];
                 }
             }
             else

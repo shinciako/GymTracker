@@ -11,8 +11,8 @@ public partial class ModalBoxExercises : Popup
     RegisterWorkoutViewModel registerWorkoutViewModel;
 
     public ModalBoxExercises(RegisterWorkoutViewModel viewModel)
-	{
-		InitializeComponent();
+    {
+        InitializeComponent();
         BindingContext = new ModalBoxExercisesViewModel();
         registerWorkoutViewModel = viewModel;
     }
@@ -26,7 +26,6 @@ public partial class ModalBoxExercises : Popup
             selectedExerciseLabel.Text = selectedItem.Name;
         }
     }
-
 
     private async void AddExercise(object sender, EventArgs e)
     {

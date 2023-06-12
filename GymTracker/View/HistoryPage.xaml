@@ -10,65 +10,65 @@
 
         <StackLayout>
             <CollectionView HeightRequest="700" ItemsSource="{Binding sessions}">
-            <CollectionView.ItemsLayout>
-                <GridItemsLayout Orientation="Vertical"
+                <CollectionView.ItemsLayout>
+                    <GridItemsLayout Orientation="Vertical"
                                  VerticalItemSpacing="10"
                                  HorizontalItemSpacing="10" />
-            </CollectionView.ItemsLayout>
-            <CollectionView.ItemTemplate>
-                <DataTemplate x:DataType="model:Session">
-                    <Frame Margin="50"
+                </CollectionView.ItemsLayout>
+                <CollectionView.ItemTemplate>
+                    <DataTemplate x:DataType="model:Session">
+                        <Frame Margin="50"
                            Padding="0"
                            CornerRadius="5"
                            HeightRequest="100"
                            WidthRequest="150">
-                        <StackLayout>
-                            <Grid BackgroundColor="CadetBlue">
-                                <Grid.RowDefinitions>
-                                    <RowDefinition Height="*" />
-                                </Grid.RowDefinitions>
-                                <StackLayout Grid.Row="0"
+                            <StackLayout>
+                                <Grid BackgroundColor="CadetBlue">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="*" />
+                                    </Grid.RowDefinitions>
+                                    <StackLayout Grid.Row="0"
                                              VerticalOptions="CenterAndExpand"
                                              HorizontalOptions="FillAndExpand"
                                              Padding="10">
-                                    <Label FontAttributes="Bold" FontSize="Large" HorizontalOptions="Center" TextColor="WhiteSmoke">
-                                        <Label.FormattedText>
-                                            <FormattedString>
-                                                <Span Text="Session - " />
-                                                <Span Text="{Binding Timestamp, StringFormat='{0:d} {0:t}'}" />
-                                            </FormattedString>
-                                        </Label.FormattedText>
-                                    </Label>
+                                        <Label FontAttributes="Bold" FontSize="Large" HorizontalOptions="Center" TextColor="WhiteSmoke">
+                                            <Label.FormattedText>
+                                                <FormattedString>
+                                                    <Span Text="Session - " />
+                                                    <Span Text="{Binding Timestamp, StringFormat='{0:d} {0:t}'}" />
+                                                </FormattedString>
+                                            </Label.FormattedText>
+                                        </Label>
+                                    </StackLayout>
+                                </Grid>
+                                <StackLayout Orientation="Horizontal">
+                                    <Label Text="Exercise" FontSize="Medium"
+                                       HorizontalOptions="CenterAndExpand" />
+                                    <Label Text="Weight" FontSize="Medium"
+                                       HorizontalOptions="CenterAndExpand" />
+                                    <Label Text="Repetitions" FontSize="Medium"
+                                       HorizontalOptions="CenterAndExpand" />
                                 </StackLayout>
-                            </Grid>
-                            <StackLayout Orientation="Horizontal">
-                                <Label Text="Exercise" FontSize="Medium"
-                                       HorizontalOptions="CenterAndExpand" />
-                                <Label Text="Weight" FontSize="Medium"
-                                       HorizontalOptions="CenterAndExpand" />
-                                <Label Text="Repetitions" FontSize="Medium"
-                                       HorizontalOptions="CenterAndExpand" />
+                                <CollectionView ItemsSource="{Binding Trainings}">
+                                    <CollectionView.ItemTemplate>
+                                        <DataTemplate x:DataType="model:Training">
+                                            <StackLayout Orientation="Horizontal">
+                                                <Label Text="{Binding Exercise.Name}" FontSize="Medium"
+                               HorizontalOptions="CenterAndExpand" />
+                                                <Label Text="{Binding Weight}" FontSize="Medium"
+                               HorizontalOptions="CenterAndExpand" />
+                                                <Label Text="{Binding Repetition}" FontSize="Medium"
+                               HorizontalOptions="CenterAndExpand" />
+                                            </StackLayout>
+                                        </DataTemplate>
+                                    </CollectionView.ItemTemplate>
+                                </CollectionView>
                             </StackLayout>
-                            <CollectionView ItemsSource="{Binding Trainings}">
-            <CollectionView.ItemTemplate>
-                <DataTemplate x:DataType="model:Training">
-                    <StackLayout Orientation="Horizontal">
-                        <Label Text="{Binding Exercise.Name}" FontSize="Medium"
-                               HorizontalOptions="CenterAndExpand" />
-                        <Label Text="{Binding Weight}" FontSize="Medium"
-                               HorizontalOptions="CenterAndExpand" />
-                        <Label Text="{Binding Repetition}" FontSize="Medium"
-                               HorizontalOptions="CenterAndExpand" />
-                    </StackLayout>
-                </DataTemplate>
-            </CollectionView.ItemTemplate>
-        </CollectionView>
-                        </StackLayout>
-                    </Frame>
-                </DataTemplate>
-            </CollectionView.ItemTemplate>
-        </CollectionView>
-    
+                        </Frame>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+
 
         </StackLayout>
     </ContentPage.Content>

@@ -43,20 +43,20 @@
                    HeightRequest="100"
                    WidthRequest="150">
                         <Frame.GestureRecognizers>
-                    <TapGestureRecognizer Tapped="Frame_Tapped" />
-                </Frame.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="Frame_Tapped" />
+                        </Frame.GestureRecognizers>
                         <StackLayout>
                             <Label Text="{Binding Name}"
                            FontAttributes="Bold"
                            FontSize="Medium" />
-                           <CollectionView ItemsSource="{Binding Exercises}">
-                    <CollectionView.ItemTemplate>
-                        <DataTemplate>
-                            <Label Text="{Binding Name}"
+                            <CollectionView ItemsSource="{Binding Exercises}">
+                                <CollectionView.ItemTemplate>
+                                    <DataTemplate>
+                                        <Label Text="{Binding Name}"
                                    FontSize="Small" />
-                        </DataTemplate>
-                    </CollectionView.ItemTemplate>
-                </CollectionView>
+                                    </DataTemplate>
+                                </CollectionView.ItemTemplate>
+                            </CollectionView>
                         </StackLayout>
                     </Frame>
                 </DataTemplate>

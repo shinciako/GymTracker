@@ -13,7 +13,6 @@ public partial class RegisterWorkoutPage : ContentPage
         BindingContext = this.viewModel;
     }
 
-
     public void AddSelectedExercise(Exercise exercise)
     {
         viewModel.AddExercise(exercise);

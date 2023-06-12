@@ -32,7 +32,6 @@ public class RegisterWorkoutViewModel : BaseViewModel
         Shell.Current.CurrentPage.ShowPopup(popup);
     }
 
-
     public void AddExercise(Exercise exercise)
     {
         Training training = new Training

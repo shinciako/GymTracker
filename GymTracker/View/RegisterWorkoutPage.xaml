@@ -8,13 +8,13 @@
              Title="Register workout">
     <VerticalStackLayout Spacing="25" Margin="0,10,0,0" Padding="20,0">
         <FlexLayout Direction="Row" JustifyContent="SpaceBetween">
-    <Button Text="Cancel Training" VerticalOptions="Start" WidthRequest="130" BackgroundColor="Red"
+            <Button Text="Cancel Training" VerticalOptions="Start" WidthRequest="130" BackgroundColor="Red"
             HorizontalOptions="EndAndExpand" Command="{Binding CancelCommand}"
             FlexLayout.AlignSelf="Start" />
-    <Button Text="Complete" VerticalOptions="End" WidthRequest="100" BackgroundColor="Green"
+            <Button Text="Complete" VerticalOptions="End" WidthRequest="100" BackgroundColor="Green"
             HorizontalOptions="EndAndExpand" Command="{Binding CompleteSessionCommand}"
             FlexLayout.AlignSelf="End" />
-</FlexLayout>
+        </FlexLayout>
 
         <Button Text="Add exercises" Command="{Binding DisplayPopupCommand}" />
 

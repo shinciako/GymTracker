@@ -1,9 +1,9 @@
 ﻿namespace GymTracker.ViewModel;
 
-public partial class MainPageViewModel: BaseViewModel
+public partial class MainPageViewModel : BaseViewModel
 {
-	public ObservableCollection<Template> Templates { get; }
-    private SessionDb sessionDb; 
+    public ObservableCollection<Template> Templates { get; }
+    private SessionDb sessionDb;
 
     public MainPageViewModel()
     {
@@ -18,10 +18,10 @@ public partial class MainPageViewModel: BaseViewModel
     }
 
     [RelayCommand]
-	async Task GoToRegisterWorkout()
-	{
+    async Task GoToRegisterWorkout()
+    {
         var registerWorkoutPage = new RegisterWorkoutPage(new RegisterWorkoutViewModel(null));
         await Shell.Current.Navigation.PushAsync(registerWorkoutPage);
-	}
+    }
 }
 
