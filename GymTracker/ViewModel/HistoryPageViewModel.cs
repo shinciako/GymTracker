@@ -7,35 +7,36 @@ public class HistoryPageViewModel
 {
     public ObservableCollection<Session> sessions { get; set; }
     public List<Exercise> exercises { get; set; }
-    public ICommand DeleteSessionCommand { get; }
     SessionDb sessionDb;
 
     public HistoryPageViewModel()
     {
-        DeleteSessionCommand = new Command<Session>(DeleteSession);
         sessionDb = new SessionDb();
         sessions = new ObservableCollection<Session>(sessionDb.GetSessions());
 
         //to be refactored - null exercise when getting from sessions
         exercises = sessionDb.GetExercises();
 
-        foreach (var session in sessions)
+        if(sessions.Count > 0)
         {
-            if (session.Trainings != null && session.Trainings.Count > 0)
+            foreach (var session in sessions)
             {
-                foreach (var training in session.Trainings)
+                if (session.Trainings != null && session.Trainings.Count > 0)
                 {
-                    training.Exercise = exercises[training.ExerciseId - 1];
+                    foreach (var training in session.Trainings)
+                    {
+                        training.Exercise = exercises[training.ExerciseId - 1];
+                    }
                 }
             }
-            else
-            {
-                Console.WriteLine("No trainings found for this session.");
-            }
+        }
+        else
+        {
+            Application.Current.MainPage.DisplayAlert("Error", "You need to add an Session", "OK");
         }
     }
 
-    private void DeleteSession(Session session)
+    public void DeleteSession(Session session)
     {
         sessionDb.DeleteSession(session);
     }

@@ -50,11 +50,11 @@ public class RegisterWorkoutViewModel : BaseViewModel
     public async void CompleteSession()
     {
         SessionDb sessionDb = new SessionDb();
-        Session newSession = new Session { Timestamp = DateTime.Now, Trainings = _trainings};
+        Session newSession = new Session { Timestamp = DateTime.Now, Trainings = _trainings };
         if (newSession.Trainings.Count > 0)
         {
             sessionDb.AddSession(newSession);
-            ClearTraining(); 
+            ClearTraining();
         }
         else
         {

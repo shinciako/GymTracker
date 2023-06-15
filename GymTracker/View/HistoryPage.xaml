@@ -31,6 +31,9 @@
                                              VerticalOptions="CenterAndExpand"
                                              HorizontalOptions="FillAndExpand"
                                              Padding="10">
+                                        <Button BackgroundColor="Red" CornerRadius="15" HeightRequest="30" WidthRequest="30"
+                                        HorizontalOptions="End" VerticalOptions="Start" Clicked="DeleteSession"
+                                        CommandParameter="{Binding .}" Text="X" FontSize="16"/>
                                         <Label FontAttributes="Bold" FontSize="Large" HorizontalOptions="Center" TextColor="WhiteSmoke">
                                             <Label.FormattedText>
                                                 <FormattedString>

@@ -1,6 +1,8 @@
-﻿using SQLite;
+﻿using Microsoft.Maui.Controls;
+using SQLite;
 using SQLiteNetExtensions.Attributes;
 using System.Collections.Generic;
+using System.Windows.Input;
 
 namespace GymTracker.Model;
 
