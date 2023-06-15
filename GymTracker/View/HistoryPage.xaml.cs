@@ -11,14 +11,14 @@ public partial class HistoryPage : ContentPage
         BindingContext = viewModel;
     }
 
-    public void DeleteSession(System.Object sender, System.EventArgs e)
+    public void DeleteSession(Object sender, EventArgs e)
     {
-        var session = (Model.Session)((Button)sender).CommandParameter;
+        var session = (Session)((Button)sender).CommandParameter;
 
-        if (BindingContext is ViewModel.HistoryPageViewModel viewModel)
+        if (BindingContext is HistoryPageViewModel viewModel)
         {
             viewModel.DeleteSession(session);
             viewModel.sessions.Remove(session);
         }
-    }
+    }   
 }
