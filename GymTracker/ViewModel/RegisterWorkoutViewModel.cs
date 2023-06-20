@@ -66,8 +66,13 @@ public class RegisterWorkoutViewModel : BaseViewModel
 
     public void ClearTraining()
     {
+        ClearTrainingImpl();
+        Application.Current.MainPage.Navigation.PopToRootAsync();
+    }
+
+    public void ClearTrainingImpl()
+    {
         Trainings.Clear();
         _trainings.Clear();
-        Application.Current.MainPage.Navigation.PopToRootAsync();
     }
 }

@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using SQLite;
 using SQLiteNetExtensions.Extensions;
+using System.IO;
+using System.Linq;
 
 namespace GymTracker.Model
 {

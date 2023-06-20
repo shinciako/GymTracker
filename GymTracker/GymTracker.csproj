@@ -1,10 +1,14 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
-		<TargetFrameworks>net7.0-android;net7.0-ios;net7.0-maccatalyst</TargetFrameworks>
+		<TargetFrameworks>net7.0-android;net7.0-ios;net7.0-maccatalyst;net7.0</TargetFrameworks>
 		<TargetFrameworks Condition="$([MSBuild]::IsOSPlatform('windows'))">$(TargetFrameworks);net7.0-windows10.0.19041.0</TargetFrameworks>
 		<!-- Uncomment to also build the tizen app. You will need to install tizen by following this: https://github.com/Samsung/Tizen.NET -->
 		<!-- <TargetFrameworks>$(TargetFrameworks);net7.0-tizen</TargetFrameworks> -->
+		<OutputType Condition="'$(TargetFramework' == 'net7.0-ios'">Exe</OutputType>
+		<!--<OutputType Condition="'$(TargetFramework' == 'net7.0-maccatalyst'">Exe</OutputType>
+		<OutputType Condition="'$(TargetFramework' == 'net7.0-android'">Exe</OutputType>OutputType-->
+		<OutputType Condition="'$(TargetFramework' == 'net7.0'">Library</OutputType>
 		<OutputType>Exe</OutputType>
 		<RootNamespace>GymTracker</RootNamespace>
 		<UseMaui>true</UseMaui>
@@ -58,6 +62,7 @@
 		<PackageReference Include="sqlite-net-pcl" Version="1.8.116" />
 		<PackageReference Include="SQLite.Net-PCL" Version="3.1.1" />
 		<PackageReference Include="SQLiteNetExtensions" Version="2.1.0" />
+		<PackageReference Include="SQLitePCLRaw.bundle_e_sqlite3" Version="2.1.5" />
 	</ItemGroup>
 
 	<ItemGroup>
